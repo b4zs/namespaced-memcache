@@ -79,6 +79,6 @@ class NamespacedMemcache extends Memcache
 
 	private function getNamespacePrefix()
 	{
-		return $_SERVER['HTTP_HOST'];
+		return isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : self::NAMESPACE_PREFIX;
 	}
 }
